@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva cita</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/icono_diente.png" type="image/png">
+</head>
+<body>
+
+    <form id="reservaCita">
+        <h3>Reserva tu cita</h3>
+
+         <!--Campo dia de cita-->
+         <label for="dia">Escoja la fecha de la cita</label>
+         <input
+             type="datetime-local">
+
+        <!--Campo nombre-->
+        <label for="nombrePaciente">Nombre</label>  
+        <input
+            type="text"
+            id="nombrePaciente"
+            placeholder="Introduzca su nombre"
+            required>
+        
+        <!--Campo DNI-->
+        <label for="dniPaciente">DNI</label>
+        <input
+            type="text"
+            id="dniPaciente"
+            placeholder="8 letras y 1 número"
+            required>
+         
+        <!--Campo Apellidos--> 
+        <label for="apellidosPaciente">Apellidos</label>   
+        <input
+            type="text"
+            id="apellidosPaciente"
+            placeholder="Introduzca sus apellidos"
+            required>
+        
+        <!--Campo Teléfono-->
+        <label for="telefonoPaciente">Teléfono</label>
+        <input 
+            type="text"
+            id="telefonoPaciente"
+            placeholder="Introduzca su numero de teléfono"
+            required>
+
+        <!--Campo fecha de nacimiento-->
+        <label for="fechaNacimiento">Fecha de nacimiento</label>    
+        <input
+            type="date"
+            id="fechaNacimiento"
+            placeholder="Introduzca su fecha de nacimiento"
+            required>
+
+        <!--Campo observaciones-->
+        <label for="observaciones">Observaciones</label>
+        <input 
+            type="text"
+            id="observaciones">
+        
+       
+        <button type="submit">Confirmar cita</button> <!--Incluir ventana que confirme si se ha reservado la cita o hay algún error-->
+    </form>
+
+    <button onclick="window.location.href='index.html'">Menú principal</button>
+
+    <footer>
+        <p>&copy Clínica dental MedacDent. Todos los derechos reservados</p>
+        <p>
+            Síguenos en nuestras redes sociales:
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.x.com" target="_blank">X</a>
+        </p>
+    </footer>
+</body>
+</html>
