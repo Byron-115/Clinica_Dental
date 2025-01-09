@@ -6,68 +6,93 @@
     <title>Reserva cita</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/icono_diente.png" type="image/png">
+    <script>
+        function validar() {
+            let dni = document.getElementById("dniPaciente").value;
+            if(isBlanco(dni) || !esCorrecto(dni ))
+                return false;
+            else 
+                return true;
+        }
+        function isBlanco(value) {
+            return "" == value;
+        }
+        function esCorrecto(value) {
+            let esCorrecto = false;
+            let reg = new RegExp("^[0-9]{8}[a-z]{1}$", "gi");
+            esCorrecto = reg.test;
+            return esCorrecto;
+        }
+    </script>
 </head>
 <body>
 
-    <form id="reservaCita">
+    <form id="reservaCita" action=" "  onsubmit="validar()" method="GET">
         <h3>Reserva tu cita</h3>
+        <fieldset>
+            <legend>Datos de la cita</legend>
+            <!--Campo dia de cita-->
+            <label for="dia">Escoja la fecha de la cita</label>
+            <input
+                 type="datetime-local"
+                 required
+                 min="2025-01-09T00:00"/>
 
-         <!--Campo dia de cita-->
-         <label for="dia">Escoja la fecha de la cita</label>
-         <input
-             type="datetime-local">
-
-        <!--Campo nombre-->
-        <label for="nombrePaciente">Nombre</label>  
-        <input
-            type="text"
-            id="nombrePaciente"
-            placeholder="Introduzca su nombre"
-            required>
+            <!--Campo nombre-->
+            <label for="nombrePaciente">Nombre</label>  
+            <input
+                type="text"
+                id="nombrePaciente"
+                placeholder="Introduzca su nombre"
+                required/>
         
-        <!--Campo DNI-->
-        <label for="dniPaciente">DNI</label>
-        <input
-            type="text"
-            id="dniPaciente"
-            placeholder="8 letras y 1 número"
-            required>
+            <!--Campo DNI-->
+            <label for="dniPaciente">DNI</label>
+            <input
+                type="text"
+                id="dniPaciente"
+                placeholder="8 letras y 1 número"
+                required/>
          
-        <!--Campo Apellidos--> 
-        <label for="apellidosPaciente">Apellidos</label>   
-        <input
-            type="text"
-            id="apellidosPaciente"
-            placeholder="Introduzca sus apellidos"
-            required>
-        
-        <!--Campo Teléfono-->
-        <label for="telefonoPaciente">Teléfono</label>
-        <input 
-            type="text"
-            id="telefonoPaciente"
-            placeholder="Introduzca su numero de teléfono"
-            required>
+            <!--Campo Apellidos--> 
+            <label for="apellidosPaciente">Apellidos</label>   
+            <input
+                type="text"
+                id="apellidosPaciente"
+                placeholder="Introduzca sus apellidos"
+                required/>
+            
+            <!--Campo Teléfono-->
+            <label for="telefonoPaciente">Teléfono</label>
+            <input 
+                type="text"
+                id="telefonoPaciente"
+                placeholder="Introduzca su numero de teléfono"
+                required
+                pattern="^[0-9]{9}"
+                />
 
-        <!--Campo fecha de nacimiento-->
-        <label for="fechaNacimiento">Fecha de nacimiento</label>    
-        <input
-            type="date"
-            id="fechaNacimiento"
-            placeholder="Introduzca su fecha de nacimiento"
-            required>
+            <!--Campo fecha de nacimiento-->
+            <label for="fechaNacimiento">Fecha de nacimiento</label>    
+            <input
+                type="date"
+                id="fechaNacimiento"
+                placeholder="Introduzca su fecha de nacimiento"
+                required/>
 
-        <!--Campo observaciones-->
-        <label for="observaciones">Observaciones</label>
-        <input 
-            type="text"
-            id="observaciones">
+            <!--Campo observaciones-->
+            <label for="observaciones">Observaciones</label>
+            <input 
+                type="text"
+                id="observaciones"/>
         
        
-        <button type="submit">Confirmar cita</button> <!--Incluir ventana que confirme si se ha reservado la cita o hay algún error-->
+            <button type="submit">Confirmar cita</button> <!--Incluir ventana que confirme si se ha reservado la cita o hay algún error-->
+            <button type="reset">Borrar</button>
+        </fieldset>
     </form>
 
-    <button onclick="window.location.href='index.html'">Menú principal</button>
+    <button onclick="window.location.href='index.html'">Volver al menú principal</button>
 
     <footer>
         <p>&copy Clínica dental MedacDent. Todos los derechos reservados</p>
